@@ -1,0 +1,8 @@
+# distance between consequent alpha-carbons
+bond_coeff 1 100 3.8
+# one-third
+bond_coeff 2 100 1.2666666666666666
+# radius of the pseudoatom
+bond_coeff 3 100 2.38
+# distance from Ca to side chain
+bond_coeff 4 100 4.24

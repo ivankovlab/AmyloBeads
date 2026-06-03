@@ -1,0 +1,23 @@
+select P , name XX
+select O , name YX
+select H , name ZX
+select C , name PX
+select R , name QX
+deselect
+color brown , P
+color red , O
+color blue, H
+color white , C
+color green , R
+set sphere_scale , 1.0 , P
+set sphere_scale , 0.5 , O
+set sphere_scale , 0.5 , H
+set sphere_scale , 1.0 , C
+set sphere_scale , 1.0 , R
+
+select R , name 6
+select O , name 5
+select H , name 3
+color green , R
+color red , O
+color blue , H

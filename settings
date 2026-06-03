@@ -1,0 +1,46 @@
+# No interaction between beads by default.
+pair_coeff * * ZERO.table ZERO
+#pair_coeff * * table ZERO.table ZERO
+#pair_coeff * * morse 0 0 0 0
+
+# Repulsion between alpha-carbon beads.
+pair_coeff 1 1 BB-BB.table BB
+#pair_coeff 1 1 table BB-BB.table BB
+#pair_coeff 1 1 morse 2.00 1.0 4.76 6.0
+
+# Repulsion between alpa-carbon and side chain beads.
+pair_coeff 1 6 BB-SC.table BB
+#pair_coeff 1 6 table BB-SC.table BB
+#pair_coeff 1 6 morse 2.1 1.0 4.76 6.0
+
+# Repulsion and attraction between side chain beads.
+pair_coeff 6 6 SC-SC.table BB
+#pair_coeff 6 6 table SC-SC.table BB
+#pair_coeff 6 6 morse 2.39 1.0 4.76 6.0
+
+# No hydrogen bonding between beads by default.
+#pair_coeff * * hbond/dreiding/lj 3 i 0.0 0.0 2 0.0 0.0 90.0
+#pair_coeff * * hbond/dreiding/morse 3 i 0 0 0 2 0 0 90.0
+
+# Hydrogen bonding in undirected CGFF.
+pair_coeff 3 5 OH.table HB
+#pair_coeff 3 5 table OH.table HB
+#pair_coeff 3 5 morse 1.58 1.0 0.0 10.0
+
+# Hydrogen bonding in directed CGFF.
+#pair_coeff 2 5 hbond/dreiding/lj 3 i 1.58 3.1 2 10.0 10.0 90.0
+#pair_coeff 2 5 hbond/dreiding/morse 3 i 1.58 1.7 3.1 2 10.0 10.0 90.0
+
+# All atoms along the pseudopeptide bond belong to the same line.
+angle_coeff 1 100.0 180
+
+# First and second angles between pseudo O/H and pseudopeptide bonds.
+angle_coeff 2 100.0 90
+
+# Angle between adjacent pseudopeptide bonds.
+angle_coeff 3 100.0 120
+
+# Dihedral between hydrogen bonding beads to maintain them in opposite
+# semispaces relative to the triangle of consecutive alpha-carbons.
+dihedral_style harmonic
+dihedral_coeff 1 100.0 1 1
